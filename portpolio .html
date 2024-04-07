@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portpolio website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .navbar{
+            width: 100%;
+            position: fixed;
+            display: flex;
+            justify-content: space-between;  
+            align-items: center;  
+            background-color: rgb(75, 73, 49); 
+            height: 50px;
+            z-index: 100;
+        }
+        .logo{
+            padding-left: 30px;
+            font-size: 40px;
+            font-weight: bold;
+            color:white ;
+            cursor: pointer;
+        }
+        .links ul{
+            display: flex;
+        }
+        .links ul li{
+            list-style: none;
+        }
+        .links ul li a{
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 15px;
+        color: #fff;
+        }
+        .links ul li a:hover{
+            color: magenta;
+        }
+        span{
+            color: rgb(8, 195, 49);
+        }
+        .sub-btn{
+            margin-right: 30px;
+            padding: 5px;
+            background-color:transparent;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            border: 2px solid greenyellow;
+            border-radius: 10px;
+            text-align: center;
+            width: 100px;
+        }
+        .sub-btn:hover{
+            background-color: rgb(246, 40, 167);
+        }
+        .icon{
+            position: absolute;
+            right: 24px;
+            top: 14px;
+            color: aliceblue;
+            font-size: 25px;
+            font-weight: bold;
+            display: none;
+            cursor: pointer;
+        }
+        .container{
+            width: 100%;
+            height: 80vh;
+            background-color: rgb(15, 43, 43);
+        }
+        .hero img{
+            width: 350px;
+            margin-top: 90px;
+            margin-left: 180px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 30px rgb(56, 178, 178);
+        } 
+        .content{
+            position: absolute;
+            left: 600px;
+            bottom: 220px;
+        } 
+        .content h1{
+            font-size: 78px;
+            font-weight: bold;
+            color: white;
+        } 
+        .content h3{
+            font-size: 45px;
+            font-weight: bold;
+            margin-top: 6px;
+            color: rgb(238, 20, 31);
+        }
+        .content p{
+            color: #f4f3f3;
+            font-size: 15px;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        .hbtn{
+            margin-top: 20px;
+            width: 100px;
+            height: 40px;
+            background-color: rgb(196, 25, 235);
+            color: white;
+            padding: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 1s;
+        }
+        .hbtn:hover{
+            background-color: chocolate;
+            transform: scale(1.1);
+        }
+        .lbtn{
+            margin-left: 20px;
+            width: 150px;
+            height: 40px;
+            background-color: rgb(196, 25, 235);
+            color: white;
+            padding: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 1s;
+        }
+        .lbtn:hover{
+            background-color: chocolate;
+            transform: scale(1.1);
+        }
+        .about{
+            width: 100%;
+            height: 100vh;
+            background-color: #899393;
+        }
+        .about h1{
+            text-align: center;
+            font-size: 150px;
+            font-weight: bold;
+            -webkit-text-stroke: 3px rgb(55, 138, 90);
+            -webkit-text-stroke-color: rgb(247, 253, 253);
+            -webkit-text-fill-color: transparent;
+             color:#fff; 
+        }
+        .about h2{
+            margin-left: 545px;
+            margin-top: -100px;
+            font-size: 33px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .act img{
+            width: 350px;
+            height: 350px;
+            margin-top: 80px;
+            margin-left: 200px;
+            border-radius: 8px;
+        }
+        .text{
+            width: 300px;
+            left: 600px;
+            position: relative;
+            bottom: 330px;
+        }
+        .text h3{
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(14, 13, 13);
+        }
+        .text p{
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            margin-top: 20px;
+        }
+        .let{
+            margin-top: 30px;
+            width: 120px;
+            height: 40px;
+            background-color: rgb(13, 252, 60);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 5px;
+            transition: 1s;
+        }
+        .let:hover{
+            background-color: rgb(252, 13, 228);
+            transform: scale(1.1);
+        }
+        .section3{
+            width: 100%;
+            height: 100vh;
+            background-color:#899393;
+        }
+        .section3 h1{
+            text-align: center;
+            font-size: 150px;
+            font-weight: bold;
+            -webkit-text-stroke: 3px rgb(55, 138, 90);
+            -webkit-text-stroke-color: rgb(247, 253, 253);
+            -webkit-text-fill-color: transparent;
+             color:#fff; 
+
+        }
+        .section3 h2{
+            margin-left: 500px;
+            margin-top: -100px;
+            font-size: 35px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .education{
+            margin-top: 100px;
+            margin-left: 200px;
+            width: 700px;
+        }
+        .education h3{
+            font-size: 50px;
+            color: rgb(10, 31, 2);
+            font-weight: bold;
+        }
+        .education h4{
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(183, 231, 82);
+        }
+        .education h5{
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(6, 4, 4);
+        }
+        .education p{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(235, 236, 225);
+        }
+        .section4{
+            width: 100%;
+            height: 60vh;
+            background-color:#899393;
+        }
+        .section4 h1{
+            text-align: center;
+            font-size: 150px;
+            font-weight: bold;
+            -webkit-text-stroke: 3px rgb(55, 138, 90);
+            -webkit-text-stroke-color: rgb(247, 253, 253);
+            -webkit-text-fill-color: transparent;
+             color:#fff; 
+        }
+        .section4 h2{
+            margin-left: 500px;
+            margin-top: -100px;
+            font-size: 35px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .skill{
+            display: flex;
+            margin-top: 150px;
+            justify-content: center;
+        }
+        .skill h4{
+            color: darkslateblue;
+            font-size: 30px;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        .section5{
+            width: 100%;
+            height: 140vh;
+            background-color:#899393;
+        }
+        .section5 h1{
+            text-align: center;
+            font-size: 150px;
+            font-weight: bold;
+            -webkit-text-stroke: 3px rgb(55, 138, 90);
+            -webkit-text-stroke-color: rgb(247, 253, 253);
+            -webkit-text-fill-color: transparent;
+             color:#fff; 
+        }
+        .section5 h2{
+            margin-left: 480px;
+            margin-top: -100px;
+            font-size: 35px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .but{
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+        }
+        .allbtn{
+            padding: 10px;
+            width: 80px;
+            height: 40px;
+            background-color:darkviolet;
+            color: rgb(14, 1, 1);
+            font-size: 18px;
+            font-weight: bold ;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .portbtn{
+            padding: 10px;
+            width: 150px;
+            height: 40px;
+            background-color:darkviolet ;
+            color: rgb(248, 207, 207);
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-right: 20px;
+            transition: 2s;
+        }
+        .portbtn:hover{
+            background-color: chocolate;
+            transform: scale(1.1);
+        }
+        .gallery{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .gallery img{
+            width: 400px;
+            margin-left: 9px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgb(205, 46, 46);
+        }
+        .section6{
+            width: 100%;
+            height: 90vh;
+            background-color: #899393;
+        }
+        .section6 h1{
+            text-align: center;
+            font-size: 150px;
+            font-weight: bold;
+            -webkit-text-stroke: 3px rgb(55, 138, 90);
+            -webkit-text-stroke-color: rgb(247, 253, 253);
+            -webkit-text-fill-color: transparent;
+             color:#fff;
+        }
+        .section6 h2{
+            margin-left: 480px;
+            margin-top: -100px;
+            font-size: 35px;
+            font-weight: bold;
+            color: darkgreen;
+        }
+        .contact{
+            margin-left: 220px;
+            position: relative;
+            top: 80px;
+        }
+        input::placeholder{
+            font-size: 16px;
+            color: #272626;
+        }
+        .send{
+            margin-left: 350px;
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgb(0, 7, 17);
+            font-size: 15px;
+            font-weight: bold;
+            width: 160px;
+            padding: 7px;
+            border-radius: 50px;
+            color: #151010;
+        }
+        .send:hover{
+            background-color: cyan;
+            cursor: pointer;
+        }
+        .footer{
+            height: 50vh;
+            background-color: #114747;
+            justify-content: center;
+            text-align: center;
+        }
+        .footer i{
+            margin-top: 90px;
+            background-color:transparent;
+            color: white;
+            margin-left: 20px;
+            border-radius: 50%;
+            font-size: 30px;
+        }
+        .footer i:hover{
+            color: rgb(20, 177, 220);
+        }
+        .foo{
+            margin-top: 30px;
+        }
+        .foo h2{
+            color: white;
+        }
+        .foo p{
+            margin-top: 20px;
+        }
+       .sliderRed{
+        accent-color: rgb(21, 0, 255);
+       }
+
+    </style>
+</head>
+<body>
+   <section>
+    <div class="navbar">
+        <h2 class="logo">My Portfo<span>lio</span></h2>
+        <div class="links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Quality">Quality</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portpolio">Portpolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="btn">
+            <button class="sub-btn">Hire ME</button>
+        </div>
+    </div>
+   </section>
+
+  <section>
+    <div class="container">
+        <div class="hero">
+            <img src="/WhatsApp Image 2023-10-13 at 21.39.25_1a512980.jpg" alt="" class="villan">
+        </div>
+        <div class="content">
+            <h1 >Hi,I'am Rajesh</h1>
+            <h3>Frontend Developer</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis accusantium corrupti <br> laboriosam quisquam! Quaerat, possimus. Nesciunt, alias.  Aspernatur, quasi. Adipisci <br> facilis libero amet optio atque, quaerat delectus! Accusamus, dicta ex?</p>
+            <button class="hbtn">Hire Me</button>
+            <button class="lbtn">Let's Talk</button>
+        </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="about" id="about">
+        <h1>ABOUT</h1>
+        <h2>ABOUT ME</h2>
+        <div class="act">
+            <img src="/me.jpeg" alt="">
+            <div class="text">
+                <h3>Developer & WebDesigner</h3>
+                <p>I am a front-end web developer. I can provide clean code and pixel perfect desige. I also make the website more & more interactive with web animations. A responsive design makes your website accessible to all users, regardless of their device.</p> 
+                <button class="let">Let's Talk</button>   
+            </div>
+        </div>
+    </div>
+  </section>
+
+   <section>
+    <div class="section3" id="Quality">
+        <h1>QUALITY</h1>
+        <h2>EDUCATION</h2>
+        <div class="education">
+            <h3>My Education:</h3><br>
+            <h4>Bachelor of Commerce</h4><br>
+            <h5>SK University | 2018-2021</h5><br>
+            <p>This course is done after 12th standard. For your 12th, you have to choose streams like commerce, science and arts, and the students who did commerce, continue in the stream by choosing B.Com. However, students of other streams are also allowed to opt for a B.</p><br>
+            <h4>Intermidiate</h4>
+            <p>Ap BSE 2016-2018</p><br>
+            <h4>Matriculation</h4>
+            <p>AP BSE 2016</p>
+        </div>
+    </div>
+   </section>
+
+   <section>
+    <div class="section4" id="skills">
+        <h1>SKILLS</h1>
+        <h2>MY SKILLS</h2>
+        <div class="skill">
+            <h4>HTML <input type="range"  class="sliderRed"></h4>
+            <h4>CSS <input type="range"  class="sliderRed"></h4>
+            <h4>Javascript <input type="range"  class="sliderRed"></h4>
+            <h4>Bootstrap <input type="range"  class="sliderRed"></h4>
+        </div>
+    </div>
+   </section>
+
+   <section>
+    <div class="section5" id="portpolio">
+        <h1>GALLERY</h1>
+        <h2>MY PORTPOLIO</h2>
+        <div class="but">
+            <button class="allbtn">All</button>
+            <button class="portbtn">Design</button>
+            <button class="portbtn">Development</button>
+            <button class="portbtn">Marketing</button>
+        </div>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D" alt="">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGRldmVsb3BtZW50fGVufDB8fDB8fHww" alt="">
+            <img src="https://media.istockphoto.com/id/1475344800/photo/background-image-of-multiple-computer-screens-with-data-and-code.jpg?s=612x612&w=0&k=20&c=uGQORI4wGyuhghgL7dRLiOm6rY1ZiIySntjaRofL7fk=" alt="">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fHww" alt="">
+            <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="">
+            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bWFya2V0aW5nfGVufDB8fDB8fHww" alt="">
+        </div>
+    </div>
+   </section>
+
+   <section>
+    <div class="section6" id="contact">
+        <h1>CONTACT</h1>
+        <h2>CONTACT ME</h2>
+        <div class="contact">
+            <input type="text" placeholder="Your Name" style="border-radius: 50px; width: 400px; height: 40px; padding-left: 20px;">
+            <input type="text" placeholder="Your Email" style="border-radius: 50px; width: 400px; height: 40px; padding-left: 20px;"><br><br>
+            <input type="text" placeholder="Subject"  style="border-radius: 50px; width: 800px; height: 60px; padding-left: 20px;"><br><br>
+            <input type="text" placeholder="Message" style="border-radius: 20px; width: 800px; height: 140px; padding:0px 20px 80px;"><br><br>
+            <button class="send">Send Message</button>
+        </div>
+    </div>
+   </section>
+
+   <section>
+    <div class="footer">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <div class="foo">
+            <h2>Privacy | Terms | FAQs | Help<h2>
+            <p>© Domain Name. All Rights Reserved. Designed by HTML Codex</p>   
+        </div>
+    </div>
+   </section>
+</body>
+</html>
